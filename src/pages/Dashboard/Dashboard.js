@@ -3,9 +3,9 @@ import React from "react";
 import Metrics from "../../components/Metrics/Metrics";
 import User from "../../components/User/User";
 import Followers from "../../components/Followers/Followers";
-import Languages from "../../components/Languages/Languages";
-import Stars from "../../components/Stars/Stars";
-import Forks from "../../components/Forks/Forks";
+import Languages from "../../components/Charts/Languages/Languages";
+import MostStarred from "../../components/Charts/MostStarred/MostStarred";
+import MostForked from "../../components/Charts/MostForked/MostForked";
 
 const Dashboard = () => {
   return (
@@ -15,8 +15,8 @@ const Dashboard = () => {
       <User />
       <Followers />
       <Languages />
-      <Stars />
-      <Forks />
+      <MostStarred />
+      <MostForked />
     </section>
   );
 };

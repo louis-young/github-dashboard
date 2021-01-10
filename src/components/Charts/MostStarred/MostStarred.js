@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../context/Context";
+import { Context } from "../../../context/Context";
 
 const sortRepositories = (repositories) => {
   const sortedRepositories = repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
@@ -24,7 +24,7 @@ const formatRepositories = (repositories) => {
   return formattedRepositories;
 };
 
-const Stars = () => {
+const MostStarred = () => {
   const { repositories } = useContext(Context);
 
   const sortedRepositories = sortRepositories(repositories);
@@ -35,10 +35,10 @@ const Stars = () => {
 
   return (
     <section>
-      <h3>Stars</h3>
+      <h3>Most Starred</h3>
       <pre>{JSON.stringify(formattedRepositories, false, 2)}</pre>
     </section>
   );
 };
 
-export default Stars;
+export default MostStarred;

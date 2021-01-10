@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../context/Context";
+import { Context } from "../../../context/Context";
 
 const sortRepositories = (repositories) => {
   const sortedRepositories = repositories.sort((a, b) => b.forks - a.forks);
@@ -24,7 +24,7 @@ const formatRepositories = (repositories) => {
   return formattedRepositories;
 };
 
-const Forks = () => {
+const MostForked = () => {
   const { repositories } = useContext(Context);
 
   const sortedRepositories = sortRepositories(repositories);
@@ -35,10 +35,10 @@ const Forks = () => {
 
   return (
     <section>
-      <h3>Forks</h3>
+      <h3>Most Forked</h3>
       <pre>{JSON.stringify(formattedRepositories, false, 2)}</pre>
     </section>
   );
 };
 
-export default Forks;
+export default MostForked;

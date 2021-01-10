@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../context/Context";
+import { Context } from "../../../context/Context";
 
 const getLanguagesFromRepositories = (repositories) => {
   const languages = repositories.reduce((accumulator, repository) => {
