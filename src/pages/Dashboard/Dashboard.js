@@ -1,5 +1,6 @@
 import React from "react";
 
+import Search from "../../components/Search/Search";
 import Metrics from "../../components/Metrics/Metrics";
 import User from "../../components/User/User";
 import Followers from "../../components/Followers/Followers";
@@ -12,6 +13,7 @@ const Dashboard = () => {
   return (
     <section>
       <h1>Dashboard</h1>
+      <Search />
       <Metrics />
       <User />
       <Followers />
