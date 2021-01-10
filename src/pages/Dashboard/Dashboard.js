@@ -5,6 +5,7 @@ import User from "../../components/User/User";
 import Followers from "../../components/Followers/Followers";
 import Languages from "../../components/Languages/Languages";
 import Popularity from "../../components/Popularity/Popularity";
+import Forks from "../../components/Forks/Forks";
 
 const Dashboard = () => {
   return (
@@ -15,6 +16,7 @@ const Dashboard = () => {
       <Followers />
       <Languages />
       <Popularity />
+      <Forks />
     </section>
   );
 };
