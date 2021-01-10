@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../context/Context";
+import Metrics from "../../components/Metrics/Metrics";
 
 const Dashboard = () => {
-  const { user } = useContext(Context);
-
   return (
     <section>
       <h1>Dashboard</h1>
-      <pre> {JSON.stringify(user, false, 2)}</pre>
+      <Metrics />
     </section>
   );
 };
