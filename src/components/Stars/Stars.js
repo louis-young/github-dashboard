@@ -8,10 +8,10 @@ const sortRepositories = (repositories) => {
   return sortedRepositories;
 };
 
-const getPopularRepositories = (repositories) => {
-  const popularRepositories = repositories.slice(0, 5);
+const getMostStarredRepositories = (repositories) => {
+  const mostStarredRepositories = repositories.slice(0, 5);
 
-  return popularRepositories;
+  return mostStarredRepositories;
 };
 
 const formatRepositories = (repositories) => {
@@ -24,14 +24,14 @@ const formatRepositories = (repositories) => {
   return formattedRepositories;
 };
 
-const Popularity = () => {
+const Stars = () => {
   const { repositories } = useContext(Context);
 
   const sortedRepositories = sortRepositories(repositories);
 
-  const popularRepositories = getPopularRepositories(sortedRepositories);
+  const mostStarredRepositories = getMostStarredRepositories(sortedRepositories);
 
-  const formattedRepositories = formatRepositories(popularRepositories);
+  const formattedRepositories = formatRepositories(mostStarredRepositories);
 
   return (
     <section>
@@ -41,4 +41,4 @@ const Popularity = () => {
   );
 };
 
-export default Popularity;
+export default Stars;
