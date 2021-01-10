@@ -39,7 +39,12 @@ const Languages = () => {
 
   const formattedLanguages = formatLanguages(sortedLanguagesDescending);
 
-  return <pre>{JSON.stringify(formattedLanguages, false, 2)}</pre>;
+  return (
+    <section>
+      <h3>Languages</h3>
+      <pre>{JSON.stringify(formattedLanguages, false, 2)}</pre>
+    </section>
+  );
 };
 
 export default Languages;

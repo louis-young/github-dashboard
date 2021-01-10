@@ -4,6 +4,7 @@ import Metrics from "../../components/Metrics/Metrics";
 import User from "../../components/User/User";
 import Followers from "../../components/Followers/Followers";
 import Languages from "../../components/Languages/Languages";
+import Popularity from "../../components/Popularity/Popularity";
 
 const Dashboard = () => {
   return (
@@ -13,6 +14,7 @@ const Dashboard = () => {
       <User />
       <Followers />
       <Languages />
+      <Popularity />
     </section>
   );
 };
