@@ -1,11 +1,17 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
+
+import initialUser from "../data/user.json";
+import initialRepositories from "../data/repositories.json";
+import initialFollowers from "../data/followers.json";
 
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const test = "Hi";
+  const [user, setUser] = useState(initialUser);
+  const [repositories, setRepositories] = useState(initialRepositories);
+  const [followers, setFollowers] = useState(initialFollowers);
 
-  return <Context.Provider value={{ test }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ user, repositories, followers }}>{children}</Context.Provider>;
 };
 
 export { Context, ContextProvider };

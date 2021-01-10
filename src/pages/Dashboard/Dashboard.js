@@ -3,9 +3,14 @@ import React, { useContext } from "react";
 import { Context } from "../../context/Context";
 
 const Dashboard = () => {
-  const { test } = useContext(Context);
+  const { user } = useContext(Context);
 
-  return <section>Dashboard {test}</section>;
+  return (
+    <section>
+      <h1>Dashboard</h1>
+      <pre> {JSON.stringify(user, false, 2)}</pre>
+    </section>
+  );
 };
 
 export default Dashboard;
