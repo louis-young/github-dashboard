@@ -6,6 +6,7 @@ import Followers from "../../components/Followers/Followers";
 import Languages from "../../components/Charts/Languages/Languages";
 import MostStarred from "../../components/Charts/MostStarred/MostStarred";
 import MostForked from "../../components/Charts/MostForked/MostForked";
+import StarsPerLanguage from "../../components/Charts/StarsPerLanguage/StarsPerLanguage";
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
       <Followers />
       <Languages />
       <MostStarred />
+      <StarsPerLanguage />
       <MostForked />
     </section>
   );
