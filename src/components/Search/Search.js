@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { Context } from "../../context/Context";
 
 const Search = () => {
   const [value, setValue] = useState("");
 
+  const { setUsername } = useContext(Context);
+
   const searchUser = (event) => {
     event.preventDefault();
 
-    //setUsername(value);
+    setUsername(value);
 
     setValue("");
   };

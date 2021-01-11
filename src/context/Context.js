@@ -1,17 +1,19 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
-import initialUser from "../data/user.json";
-import initialRepositories from "../data/repositories.json";
-import initialFollowers from "../data/followers.json";
+import useGitHubData from "../hooks/useGitHubData";
 
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [user, setUser] = useState(initialUser);
-  const [repositories, setRepositories] = useState(initialRepositories);
-  const [followers, setFollowers] = useState(initialFollowers);
+  const [username, setUsername] = useState(null);
 
-  return <Context.Provider value={{ user, repositories, followers }}>{children}</Context.Provider>;
+  const { loading, error, user, repositories, followers } = useGitHubData(username);
+
+  return (
+    <Context.Provider value={{ loading, error, user, repositories, followers, setUsername }}>
+      {children}
+    </Context.Provider>
+  );
 };
 
 export { Context, ContextProvider };

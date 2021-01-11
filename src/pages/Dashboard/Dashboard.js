@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { Context } from "../../context/Context";
 
 import Search from "../../components/Search/Search";
 import Metrics from "../../components/Metrics/Metrics";
@@ -10,17 +12,31 @@ import MostForked from "../../components/Charts/MostForked/MostForked";
 import StarsPerLanguage from "../../components/Charts/StarsPerLanguage/StarsPerLanguage";
 
 const Dashboard = () => {
+  const { loading, error, user } = useContext(Context);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Something went wrong. Please try again.</p>;
+  }
+
   return (
     <section>
       <h1>Dashboard</h1>
       <Search />
-      <Metrics />
-      <User />
-      <Followers />
-      <Languages />
-      <MostStarred />
-      <StarsPerLanguage />
-      <MostForked />
+      {user && (
+        <>
+          <Metrics />
+          <User />
+          <Followers />
+          <Languages />
+          <MostStarred />
+          <StarsPerLanguage />
+          <MostForked />
+        </>
+      )}
     </section>
   );
 };
