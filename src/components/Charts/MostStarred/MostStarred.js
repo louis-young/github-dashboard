@@ -33,6 +33,10 @@ const MostStarred = () => {
 
   const formattedRepositories = formatRepositories(mostStarredRepositories);
 
+  if (!repositories.length) {
+    return <h4>No repositories</h4>;
+  }
+
   return (
     <section>
       <h3>Most Starred</h3>
