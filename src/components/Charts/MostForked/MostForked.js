@@ -33,6 +33,10 @@ const MostForked = () => {
 
   const formattedRepositories = formatRepositories(mostForkedRepositories);
 
+  if (!repositories.length) {
+    return <h4>No repositories</h4>;
+  }
+
   return (
     <section>
       <h3>Most Forked</h3>
