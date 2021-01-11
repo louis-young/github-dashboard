@@ -47,6 +47,10 @@ const StarsPerLanguage = () => {
 
   const formattedStarsPerLanguage = formatStarsPerLanguage(mostStarredLanguages);
 
+  if (!repositories.length) {
+    return <h4>No repositories</h4>;
+  }
+
   return (
     <section>
       <h3>Stars Per Language</h3>
