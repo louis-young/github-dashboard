@@ -26,16 +26,26 @@ const User = () => {
       <img src={image} alt={username} />
       <p>Username: {username}</p>
       <p>Link: {link}</p>
-      <p>Description: {description}</p>
-      <p>
-        <img className="user__icon" src={office} alt={company} /> {company}
-      </p>
-      <p>
-        <img className="user__icon" src={pin} alt={location} /> {location}
-      </p>
-      <p>
-        <img className="user__icon" src={external} alt={website} /> {website}
-      </p>
+
+      {description && <p>Description: {description}</p>}
+
+      {company && (
+        <p>
+          <img className="user__icon" src={office} alt={company} /> {company}
+        </p>
+      )}
+
+      {location && (
+        <p>
+          <img className="user__icon" src={pin} alt={location} /> {location}
+        </p>
+      )}
+
+      {website && (
+        <p>
+          <img className="user__icon" src={external} alt={website} /> {website}
+        </p>
+      )}
     </article>
   );
 };
