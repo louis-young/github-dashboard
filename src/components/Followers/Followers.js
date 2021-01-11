@@ -10,13 +10,16 @@ const Followers = () => {
   const { followers } = useContext(Context);
 
   return (
-    <ul className="followers">
-      {followers.map((follower) => {
-        const { id, html_url: link, avatar_url: image, login: username } = follower;
+    <>
+      <h3>Followers</h3>
+      <ul className="followers">
+        {followers.map((follower) => {
+          const { id, html_url: link, avatar_url: image, login: username } = follower;
 
-        return <Follower key={id} link={link} image={image} username={username} />;
-      })}
-    </ul>
+          return <Follower key={id} link={link} image={image} username={username} />;
+        })}
+      </ul>
+    </>
   );
 };
 
