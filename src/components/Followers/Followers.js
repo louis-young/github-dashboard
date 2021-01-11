@@ -9,6 +9,10 @@ import "./Followers.scss";
 const Followers = () => {
   const { followers } = useContext(Context);
 
+  if (!followers.length) {
+    return <h4>No followers.</h4>;
+  }
+
   return (
     <>
       <h3>Followers</h3>
