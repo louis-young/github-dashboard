@@ -39,6 +39,10 @@ const Languages = () => {
 
   const formattedLanguages = formatLanguages(sortedLanguagesDescending);
 
+  if (!repositories.length) {
+    return <h4>No repositories</h4>;
+  }
+
   return (
     <section>
       <h3>Languages</h3>
