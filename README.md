@@ -1,6 +1,6 @@
 # GitHub Dashboard
 
-React application to look up and display metrics and information about a GitHub user by consuming data from the GitHub API.
+React application to look up and display metrics and information about a GitHub user by making requests to the GitHub API.
 
 <!-- ![GitHub Dashboard](documentation/github-dashboard.jpg) -->
 
