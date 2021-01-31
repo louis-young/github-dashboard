@@ -7,9 +7,12 @@
   @extend %hover;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
   align-items: center;
-  width: fit-content;
+  margin-bottom: 1rem;
+  @include laptop {
+    width: fit-content;
+  }
   &__image {
     width: 50px;
     display: flex;
@@ -22,10 +25,15 @@
   }
   &__username {
     padding: unset;
-    font-size: 1.15rem;
+    font-size: 1rem;
+    font-weight: $medium;
   }
   &__link {
     padding-top: 0.25rem;
     font-size: 0.9rem;
+    display: none;
+    @include laptop {
+      display: initial;
+    }
   }
 }

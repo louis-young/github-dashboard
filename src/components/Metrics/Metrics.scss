@@ -1,5 +1,14 @@
+@import "../../stylesheets/abstracts/breakpoints";
+
 .metrics {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

@@ -17,8 +17,5 @@
   &__list {
     height: 300px;
     overflow-y: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 }

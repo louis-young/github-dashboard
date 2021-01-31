@@ -46,7 +46,7 @@ const User = () => {
       {location && (
         <p className="user__detail">
           <img className="user__icon" src={pin} alt={location} />
-          <p className="user__text">{location}</p>
+          <span className="user__text">{location}</span>
         </p>
       )}
 

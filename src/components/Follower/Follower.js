@@ -10,7 +10,7 @@ const Follower = ({ link, image, username }) => {
           <img className="follower__icon" src={image} alt={username} />
         </figure>
         <figcaption>
-          <h5 className="follower__username">{username}</h5>
+          <h6 className="follower__username">{username}</h6>
           <p className="follower__link">{link}</p>
         </figcaption>
       </a>

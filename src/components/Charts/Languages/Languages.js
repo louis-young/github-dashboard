@@ -96,6 +96,8 @@ const Languages = () => {
             display: true,
             position: "right",
           },
+          responsive: true,
+          maintainAspectRatio: true,
         }}
       />
     </article>

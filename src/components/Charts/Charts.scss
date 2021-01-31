@@ -5,9 +5,12 @@
 
 .charts {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
   gap: 2rem;
   margin-top: 2rem;
+  grid-template-columns: 1fr;
+  @include desktop {
+    grid-template-columns: 1fr 1.5fr;
+  }
 }
 
 .chart {

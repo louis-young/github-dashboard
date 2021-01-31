@@ -1,6 +1,11 @@
+@import "../../stylesheets/abstracts/breakpoints";
+
 .details {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 2rem;
+  grid-template-columns: 1fr;
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -81,6 +81,8 @@ const MostForked = () => {
           legend: {
             display: false,
           },
+          responsive: true,
+          maintainAspectRatio: true,
           scales: {
             yAxes: [
               {

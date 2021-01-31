@@ -3,8 +3,10 @@ import React from "react";
 import "./Metric.scss";
 
 const Metric = ({ icon, name, quantity }) => {
+  const className = name.toLowerCase();
+
   return (
-    <article className="metric card">
+    <article className={`metric metric--${className} card`}>
       <figure className="metric__wrapper">
         <img src={icon} alt={name} className="metric__icon" />
       </figure>

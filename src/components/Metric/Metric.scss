@@ -2,6 +2,7 @@
 @import "../../stylesheets/abstracts/extends";
 
 .metric {
+  $self: &;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 2rem;
@@ -20,12 +21,31 @@
     $height: 25px;
     width: $width;
     max-height: $height;
-    filter: brightness(0) invert(1);
   }
   &__figure {
     padding: unset;
   }
   &__name {
     @extend %subtitle;
+  }
+  &--repositories {
+    #{$self}__wrapper {
+      background: transparentize($primary-shade, 0.5);
+    }
+  }
+  &--followers {
+    #{$self}__wrapper {
+      background: transparentize($secondary-shade, 0.5);
+    }
+  }
+  &--following {
+    #{$self}__wrapper {
+      background: transparentize($tertiary-shade, 0.5);
+    }
+  }
+  &--gists {
+    #{$self}__wrapper {
+      background: transparentize($quaternary-shade, 0.5);
+    }
   }
 }

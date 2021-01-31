@@ -12,6 +12,7 @@
   }
   &__input,
   &__submit {
+    @extend %round;
     height: 55px;
   }
   &__input {
