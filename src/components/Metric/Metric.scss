@@ -1,5 +1,31 @@
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+
 .metric {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 2rem;
+  &__wrapper {
+    $dimensions: 60px;
+    width: $dimensions;
+    height: $dimensions;
+    border-radius: 100%;
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__icon {
-    width: 35px;
+    $width: 30px;
+    $height: 25px;
+    width: $width;
+    max-height: $height;
+    filter: brightness(0) invert(1);
+  }
+  &__figure {
+    padding: unset;
+  }
+  &__name {
+    @extend %subtitle;
   }
 }

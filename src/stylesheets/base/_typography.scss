@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Montserrat:400,500,600");
+@import url("//fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
 
 $body-font-family: "Montserrat", sans-serif;
 
@@ -7,8 +7,8 @@ $heading-font-family: inherit;
 $light-text: #ffffff;
 $dark-text: #131313;
 
-$heading-line-height: 2;
-$body-line-height: 2;
+$heading-line-height: 1.5;
+$body-line-height: 1.5;
 
 $thin: 100;
 $extra-light: 200;
@@ -34,6 +34,7 @@ h5,
 h6 {
   line-height: $heading-line-height;
   font-family: $heading-font-family;
+  font-weight: $semi-bold;
 }
 
 p,

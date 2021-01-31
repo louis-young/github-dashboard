@@ -9,6 +9,8 @@ import crowd from "../../assets/icons/metrics/crowd.svg";
 import users from "../../assets/icons/metrics/users.svg";
 import note from "../../assets/icons/metrics/note.svg";
 
+import "./Metrics.scss";
+
 const Metrics = () => {
   const { user } = useContext(Context);
 
@@ -38,9 +40,7 @@ const Metrics = () => {
   ];
 
   return (
-    <section>
-      <h2>Metrics</h2>
-
+    <section className="metrics">
       {metrics.map((metric) => (
         <Metric key={metric.name} icon={metric.icon} name={metric.name} quantity={metric.quantity} />
       ))}

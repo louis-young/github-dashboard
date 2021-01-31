@@ -17,3 +17,9 @@
 %shadow {
   box-shadow: $shadow;
 }
+
+%subtitle {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.75px;
+}

@@ -12,6 +12,8 @@ import MostForked from "../../components/Charts/MostForked/MostForked";
 import StarsPerLanguage from "../../components/Charts/StarsPerLanguage/StarsPerLanguage";
 import Charts from "../../components/Charts/Charts";
 
+import "./Dashboard.scss";
+
 const Dashboard = () => {
   const { loading, error, user } = useContext(Context);
 
@@ -24,8 +26,7 @@ const Dashboard = () => {
   }
 
   return (
-    <section style={{ width: "75%", margin: "auto" }}>
-      <h1>Dashboard</h1>
+    <section className="dashboard container container--large">
       <Search />
       {user && (
         <>

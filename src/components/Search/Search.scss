@@ -1,0 +1,28 @@
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/abstracts/breakpoints";
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+  @include tablet {
+    grid-template-columns: 1fr auto;
+  }
+  &__input,
+  &__submit {
+    height: 55px;
+  }
+  &__input {
+    box-shadow: unset;
+    &::placeholder {
+      opacity: 0.75;
+    }
+  }
+  &__submit {
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+  }
+}
