@@ -1,5 +1,43 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
 .user {
+  &__user {
+    @extend %hover;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1.5rem;
+    align-items: center;
+    width: fit-content;
+  }
+  &__photo {
+    width: 80px;
+    border-radius: 100%;
+  }
+  &__username {
+    padding: unset;
+  }
+  &__name {
+  }
+  &__details {
+    // text-align: center;
+  }
+  &__description {
+    padding: 2rem 0;
+    font-weight: $medium;
+  }
+  &__detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+  }
   &__icon {
-    width: 17.5px;
+    width: 15px;
+    opacity: 0.75;
+  }
+  &__text {
   }
 }
