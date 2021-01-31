@@ -25,7 +25,7 @@
     // text-align: center;
   }
   &__description {
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     font-weight: $medium;
   }
   &__detail {
@@ -33,6 +33,12 @@
     grid-template-columns: auto 1fr;
     grid-gap: 1rem;
     align-items: center;
+    &--first {
+      padding-top: 1rem;
+    }
+    &--last {
+      padding-bottom: unset;
+    }
   }
   &__icon {
     width: 15px;

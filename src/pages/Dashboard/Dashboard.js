@@ -11,6 +11,7 @@ import MostStarred from "../../components/Charts/MostStarred/MostStarred";
 import MostForked from "../../components/Charts/MostForked/MostForked";
 import StarsPerLanguage from "../../components/Charts/StarsPerLanguage/StarsPerLanguage";
 import Charts from "../../components/Charts/Charts";
+import Details from "../../components/Details/Details";
 
 import "./Dashboard.scss";
 
@@ -31,8 +32,10 @@ const Dashboard = () => {
       {user && (
         <>
           <Metrics />
-          <User />
-          <Followers />
+          <Details>
+            <User />
+            <Followers />
+          </Details>
           <Charts>
             <Languages />
             <MostStarred />

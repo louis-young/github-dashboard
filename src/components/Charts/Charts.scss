@@ -1,5 +1,18 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
 .charts {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  grid-gap: 2rem;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.chart {
+  @extend %card;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

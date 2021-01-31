@@ -1,6 +1,31 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
 .follower {
+  @extend %hover;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1.5rem;
+  align-items: center;
+  width: fit-content;
   &__image {
     width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icon {
+    width: 100%;
     border-radius: 100%;
+  }
+  &__username {
+    padding: unset;
+    font-size: 1.15rem;
+  }
+  &__link {
+    padding-top: 0.25rem;
+    font-size: 0.9rem;
   }
 }

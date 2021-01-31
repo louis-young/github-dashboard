@@ -22,8 +22,6 @@ const User = () => {
     name,
   } = user;
 
-  console.log(user);
-
   return (
     <article className="user card">
       <a href={link} target="_blank" rel="noopener nofollow noreferrer" className="user__user">
@@ -39,9 +37,9 @@ const User = () => {
       <p className="user__description">{description}</p>
 
       {company && (
-        <p className="user__detail">
+        <p className="user__detail user__detail--first">
           <img className="user__icon" src={office} alt={company} />
-          <p className="user__text">{company}</p>
+          <span className="user__text">{company}</span>
         </p>
       )}
 
@@ -53,7 +51,7 @@ const User = () => {
       )}
 
       {website && (
-        <p className="user__detail">
+        <p className="user__detail user__detail--last">
           <img className="user__icon" src={external} alt={website} />
           <a href={link} target="_blank" rel="noopener nofollow noreferrer" className="user__text link">
             {website}

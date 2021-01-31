@@ -1,4 +1,24 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
 .followers {
-  height: 350px;
-  overflow-y: auto;
+  position: relative;
+  &:after {
+    @extend %pseudo;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to top, $white 50%, transparent);
+  }
+  &__list {
+    height: 300px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

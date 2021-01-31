@@ -23,3 +23,9 @@
   font-size: 0.8rem;
   letter-spacing: 0.75px;
 }
+
+%card {
+  @extend %round;
+  background: $white;
+  padding: 2rem;
+}

@@ -14,16 +14,15 @@ const Followers = () => {
   }
 
   return (
-    <>
-      <h3>Followers</h3>
-      <ul className="followers">
+    <article className="followers card">
+      <ul className="followers__list">
         {followers.map((follower) => {
           const { id, html_url: link, avatar_url: image, login: username } = follower;
 
           return <Follower key={id} link={link} image={image} username={username} />;
         })}
       </ul>
-    </>
+    </article>
   );
 };
 
