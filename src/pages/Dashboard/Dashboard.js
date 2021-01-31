@@ -10,6 +10,7 @@ import Languages from "../../components/Charts/Languages/Languages";
 import MostStarred from "../../components/Charts/MostStarred/MostStarred";
 import MostForked from "../../components/Charts/MostForked/MostForked";
 import StarsPerLanguage from "../../components/Charts/StarsPerLanguage/StarsPerLanguage";
+import Charts from "../../components/Charts/Charts";
 
 const Dashboard = () => {
   const { loading, error, user } = useContext(Context);
@@ -23,7 +24,7 @@ const Dashboard = () => {
   }
 
   return (
-    <section>
+    <section style={{ width: "75%", margin: "auto" }}>
       <h1>Dashboard</h1>
       <Search />
       {user && (
@@ -31,10 +32,12 @@ const Dashboard = () => {
           <Metrics />
           <User />
           <Followers />
-          <Languages />
-          <MostStarred />
-          <StarsPerLanguage />
-          <MostForked />
+          <Charts>
+            <Languages />
+            <MostStarred />
+            <StarsPerLanguage />
+            <MostForked />
+          </Charts>
         </>
       )}
     </section>

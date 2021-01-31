@@ -83,7 +83,7 @@ const StarsPerLanguage = () => {
   }
 
   return (
-    <section>
+    <article className="chart">
       <Doughnut
         data={data}
         options={{
@@ -98,7 +98,7 @@ const StarsPerLanguage = () => {
           },
         }}
       />
-    </section>
+    </article>
   );
 };
 

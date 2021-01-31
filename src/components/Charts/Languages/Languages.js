@@ -83,7 +83,7 @@ const Languages = () => {
   }
 
   return (
-    <section>
+    <article className="chart">
       <Pie
         data={data}
         options={{
@@ -98,7 +98,7 @@ const Languages = () => {
           },
         }}
       />
-    </section>
+    </article>
   );
 };
 

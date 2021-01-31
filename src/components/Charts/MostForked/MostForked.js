@@ -69,7 +69,7 @@ const MostForked = () => {
   }
 
   return (
-    <section>
+    <article className="chart">
       <HorizontalBar
         data={data}
         options={{
@@ -101,7 +101,7 @@ const MostForked = () => {
           },
         }}
       />
-    </section>
+    </article>
   );
 };
 

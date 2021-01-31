@@ -1,0 +1,14 @@
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-gap: 3rem;
+}
+
+.chart {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}

@@ -69,7 +69,7 @@ const MostStarred = () => {
   }
 
   return (
-    <section>
+    <article className="chart">
       <Bar
         data={data}
         options={{
@@ -101,7 +101,7 @@ const MostStarred = () => {
           },
         }}
       />
-    </section>
+    </article>
   );
 };
 
