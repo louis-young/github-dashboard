@@ -83,15 +83,13 @@ const StarsPerLanguage = () => {
   }
 
   return (
-    <section style={{ width: "25%" }}>
-      <h3>Stars Per Language</h3>
-
+    <section>
       <Doughnut
         data={data}
         options={{
           title: {
             display: true,
-            text: "Stars",
+            text: "Stars Per Language",
             fontSize: 20,
           },
           legend: {

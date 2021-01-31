@@ -71,7 +71,7 @@ const Languages = () => {
     labels,
     datasets: [
       {
-        label: "Language",
+        label: "Repositories",
         backgroundColor: CHART_COLOUR_PALETTE,
         data: dataset,
       },
@@ -83,9 +83,7 @@ const Languages = () => {
   }
 
   return (
-    <section style={{ width: "25%" }}>
-      <h3>Languages</h3>
-
+    <section>
       <Pie
         data={data}
         options={{

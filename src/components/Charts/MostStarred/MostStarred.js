@@ -69,19 +69,35 @@ const MostStarred = () => {
   }
 
   return (
-    <section style={{ width: "50%" }}>
-      <h3>Most Starred</h3>
-
+    <section>
       <Bar
         data={data}
         options={{
           title: {
             display: true,
-            text: "Stars",
+            text: "Most Starred",
             fontSize: 20,
           },
           legend: {
             display: false,
+          },
+          scales: {
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Stars",
+                },
+              },
+            ],
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Repository",
+                },
+              },
+            ],
           },
         }}
       />

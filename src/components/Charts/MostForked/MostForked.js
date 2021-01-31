@@ -57,7 +57,7 @@ const MostForked = () => {
     labels,
     datasets: [
       {
-        label: "Most Forked",
+        label: "Forks",
         backgroundColor: CHART_COLOUR_PALETTE,
         data: dataset,
       },
@@ -69,9 +69,7 @@ const MostForked = () => {
   }
 
   return (
-    <section style={{ width: "50%" }}>
-      <h3>Most Forked</h3>
-
+    <section>
       <HorizontalBar
         data={data}
         options={{
@@ -82,6 +80,24 @@ const MostForked = () => {
           },
           legend: {
             display: false,
+          },
+          scales: {
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Repository",
+                },
+              },
+            ],
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Forks",
+                },
+              },
+            ],
           },
         }}
       />
