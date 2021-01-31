@@ -1,0 +1,5 @@
+.link {
+  @extend %hover;
+  color: $primary-color;
+  font-weight: $medium;
+}
