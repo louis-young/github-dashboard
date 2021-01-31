@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
+import { Pie } from "react-chartjs-2";
+
+import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+
 const getLanguagesFromRepositories = (repositories) => {
   const languages = repositories.reduce((accumulator, repository) => {
     const { language } = repository;
@@ -24,10 +28,28 @@ const sortLanguagesDescending = (languages) => {
   return sortedLanguagesDescending;
 };
 
+const getMostPopularLanguages = (languages) => {
+  const mostPopularLanguages = languages.slice(0, 5);
+
+  return mostPopularLanguages;
+};
+
 const formatLanguages = (languages) => {
   const formattedLanguages = languages.map(([language, count]) => ({ language, count }));
 
   return formattedLanguages;
+};
+
+const getLabels = (formattedLanguages) => {
+  const labels = formattedLanguages.map(({ language }) => language);
+
+  return labels;
+};
+
+const getDataset = (formattedLanguages) => {
+  const dataset = formattedLanguages.map(({ count }) => count);
+
+  return dataset;
 };
 
 const Languages = () => {
@@ -37,16 +59,47 @@ const Languages = () => {
 
   const sortedLanguagesDescending = sortLanguagesDescending(languages);
 
-  const formattedLanguages = formatLanguages(sortedLanguagesDescending);
+  const mostPopularLanguages = getMostPopularLanguages(sortedLanguagesDescending);
+
+  const formattedLanguages = formatLanguages(mostPopularLanguages);
+
+  const labels = getLabels(formattedLanguages);
+
+  const dataset = getDataset(formattedLanguages);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Language",
+        backgroundColor: CHART_COLOUR_PALETTE,
+        data: dataset,
+      },
+    ],
+  };
 
   if (!repositories.length) {
     return <h4>No repositories</h4>;
   }
 
   return (
-    <section>
+    <section style={{ width: "25%" }}>
       <h3>Languages</h3>
-      <pre>{JSON.stringify(formattedLanguages, false, 2)}</pre>
+
+      <Pie
+        data={data}
+        options={{
+          title: {
+            display: true,
+            text: "Languages",
+            fontSize: 20,
+          },
+          legend: {
+            display: true,
+            position: "right",
+          },
+        }}
+      />
     </section>
   );
 };

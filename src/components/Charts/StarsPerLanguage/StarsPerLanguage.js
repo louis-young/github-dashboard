@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
+import { Doughnut } from "react-chartjs-2";
+
+import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+
 const getStarsPerLanguage = (repositories) => {
   const starsPerLanguage = repositories.reduce((accumulator, repository) => {
     const { language, stargazers_count: stars } = repository;
@@ -36,6 +40,18 @@ const formatStarsPerLanguage = (languages) => {
   return formattedStarsPerLanguage;
 };
 
+const getLabels = (formattedStarsPerLanguage) => {
+  const labels = formattedStarsPerLanguage.map(({ language }) => language);
+
+  return labels;
+};
+
+const getDataset = (formattedStarsPerLanguage) => {
+  const dataset = formattedStarsPerLanguage.map(({ stars }) => stars);
+
+  return dataset;
+};
+
 const StarsPerLanguage = () => {
   const { repositories } = useContext(Context);
 
@@ -47,14 +63,43 @@ const StarsPerLanguage = () => {
 
   const formattedStarsPerLanguage = formatStarsPerLanguage(mostStarredLanguages);
 
+  const labels = getLabels(formattedStarsPerLanguage);
+
+  const dataset = getDataset(formattedStarsPerLanguage);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stars",
+        backgroundColor: CHART_COLOUR_PALETTE,
+        data: dataset,
+      },
+    ],
+  };
+
   if (!repositories.length) {
     return <h4>No repositories</h4>;
   }
 
   return (
-    <section>
+    <section style={{ width: "25%" }}>
       <h3>Stars Per Language</h3>
-      <pre>{JSON.stringify(formattedStarsPerLanguage, false, 2)}</pre>
+
+      <Doughnut
+        data={data}
+        options={{
+          title: {
+            display: true,
+            text: "Stars",
+            fontSize: 20,
+          },
+          legend: {
+            display: true,
+            position: "right",
+          },
+        }}
+      />
     </section>
   );
 };
