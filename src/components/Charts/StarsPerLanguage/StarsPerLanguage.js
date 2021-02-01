@@ -98,7 +98,6 @@ const StarsPerLanguage = () => {
           },
           legend: {
             display: true,
-            position: "right",
           },
           responsive: true,
           maintainAspectRatio: true,

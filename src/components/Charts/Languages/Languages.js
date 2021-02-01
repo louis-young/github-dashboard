@@ -98,10 +98,9 @@ const Languages = () => {
           },
           legend: {
             display: true,
-            position: "right",
           },
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
         }}
       />
     </article>
