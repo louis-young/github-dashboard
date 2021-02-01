@@ -8,6 +8,16 @@ import external from "../../assets/icons/user/external.svg";
 
 import "./User.scss";
 
+const linkHasPrefix = (link) => {
+  const http = link.startsWith("http://");
+
+  const https = link.startsWith("https://");
+
+  const prefixed = http || https;
+
+  return prefixed;
+};
+
 const User = () => {
   const { user } = useContext(Context);
 
@@ -21,6 +31,8 @@ const User = () => {
     blog: website,
     name,
   } = user;
+
+  const prefixed = linkHasPrefix(website);
 
   return (
     <article className="user card">
@@ -53,7 +65,12 @@ const User = () => {
       {website && (
         <p className="user__detail user__detail--last">
           <img className="user__icon" src={external} alt={website} />
-          <a href={website} target="_blank" rel="noopener nofollow noreferrer" className="user__text link">
+          <a
+            href={`${prefixed ? website : `http://${website}`}`}
+            target="_blank"
+            rel="noopener nofollow noreferrer"
+            className="user__text link"
+          >
             {website}
           </a>
         </p>
