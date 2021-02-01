@@ -20,13 +20,10 @@
     padding: unset;
   }
   &__name {
-  }
-  &__details {
-    // text-align: center;
+    padding-bottom: 0.2rem;
   }
   &__description {
     padding: 2rem 0 1rem 0;
-    font-weight: $medium;
   }
   &__detail {
     display: grid;
@@ -43,7 +40,5 @@
   &__icon {
     width: 15px;
     opacity: 0.75;
-  }
-  &__text {
   }
 }

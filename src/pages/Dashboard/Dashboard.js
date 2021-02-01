@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 
 import { Context } from "../../context/Context";
 
-import Search from "../../components/Search/Search";
 import Metrics from "../../components/Metrics/Metrics";
 import User from "../../components/User/User";
 import Followers from "../../components/Followers/Followers";
@@ -14,37 +13,38 @@ import Charts from "../../components/Charts/Charts";
 import Details from "../../components/Details/Details";
 
 import "./Dashboard.scss";
+import Loading from "../../components/Loading/Loading";
 
 const Dashboard = () => {
-  const { loading, error, user } = useContext(Context);
+  const { loading, error } = useContext(Context);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   if (error) {
-    return <p>Something went wrong. Please try again.</p>;
+    return (
+      <article className="card card--center">
+        <h4 className="card__title">No user found. Please try again.</h4>
+      </article>
+    );
   }
 
   return (
-    <section className="dashboard container container--large">
-      <Search />
-      {user && (
-        <>
-          <Metrics />
-          <Details>
-            <User />
-            <Followers />
-          </Details>
-          <Charts>
-            <Languages />
-            <MostStarred />
-            <StarsPerLanguage />
-            <MostForked />
-          </Charts>
-        </>
-      )}
-    </section>
+    <>
+      {loading && <Loading />}
+      <Metrics />
+      <Details>
+        <User />
+        <Followers />
+      </Details>
+      <Charts>
+        <Languages />
+        <MostStarred />
+        <StarsPerLanguage />
+        <MostForked />
+      </Charts>
+    </>
   );
 };
 

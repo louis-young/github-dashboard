@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 
 import { fetchGitHubData } from "../api/api";
 
+import initialUser from "../data/user.json";
+import initialRepositories from "../data/repositories.json";
+import initialFollowers from "../data/followers.json";
+
 const useGitHubData = (username) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const [user, setUser] = useState();
-  const [repositories, setRepositories] = useState();
-  const [followers, setFollowers] = useState();
+  const [user, setUser] = useState(initialUser);
+  const [repositories, setRepositories] = useState(initialRepositories);
+  const [followers, setFollowers] = useState(initialFollowers);
 
   useEffect(() => {
     const getGitHubData = async () => {

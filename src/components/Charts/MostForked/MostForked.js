@@ -65,7 +65,11 @@ const MostForked = () => {
   };
 
   if (!repositories.length) {
-    return <h4>No repositories</h4>;
+    return (
+      <article className="card card--center">
+        <h4 className="card__title">No repositories</h4>
+      </article>
+    );
   }
 
   return (

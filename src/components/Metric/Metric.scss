@@ -21,6 +21,7 @@
     $height: 25px;
     width: $width;
     max-height: $height;
+    filter: brightness(0) invert(1);
   }
   &__figure {
     padding: unset;
@@ -30,22 +31,22 @@
   }
   &--repositories {
     #{$self}__wrapper {
-      background: transparentize($primary-shade, 0.5);
+      background: transparentize($primary-shade, 0.25);
     }
   }
   &--followers {
     #{$self}__wrapper {
-      background: transparentize($secondary-shade, 0.5);
+      background: transparentize($secondary-shade, 0.25);
     }
   }
   &--following {
     #{$self}__wrapper {
-      background: transparentize($tertiary-shade, 0.5);
+      background: transparentize($tertiary-shade, 0.25);
     }
   }
   &--gists {
     #{$self}__wrapper {
-      background: transparentize($quaternary-shade, 0.5);
+      background: transparentize($quaternary-shade, 0.25);
     }
   }
 }

@@ -7,7 +7,7 @@ import "./Search.scss";
 const Search = () => {
   const [value, setValue] = useState("");
 
-  const { setUsername } = useContext(Context);
+  const { setUsername, loading } = useContext(Context);
 
   const searchUser = (event) => {
     event.preventDefault();
@@ -27,7 +27,7 @@ const Search = () => {
         required
         className="search__input"
       />
-      <button type="submit" className="search__submit button">
+      <button type="submit" className="search__submit button" disabled={loading}>
         Search
       </button>
     </form>

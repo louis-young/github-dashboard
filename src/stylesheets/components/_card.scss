@@ -1,3 +1,12 @@
 .card {
   @extend %card;
+  &__title {
+    @extend %subtitle;
+    padding: unset;
+  }
+  &--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

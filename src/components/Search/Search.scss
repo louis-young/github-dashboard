@@ -10,6 +10,9 @@
   @include tablet {
     grid-template-columns: 1fr auto;
   }
+  @include desktop {
+    max-width: calc(50% - 1rem);
+  }
   &__input,
   &__submit {
     @extend %round;

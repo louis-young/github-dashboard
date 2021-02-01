@@ -10,7 +10,11 @@ const Followers = () => {
   const { followers } = useContext(Context);
 
   if (!followers.length) {
-    return <h4>No followers.</h4>;
+    return (
+      <article className="card card--center">
+        <h4 className="card__title">No followers</h4>
+      </article>
+    );
   }
 
   return (

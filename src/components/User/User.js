@@ -29,12 +29,12 @@ const User = () => {
           <img src={image} alt={username} className="user__photo" />
         </figure>
         <figcaption className="user__details">
-          <h5 className="user__name">{name}</h5>
+          {name && <h5 className="user__name">{name}</h5>}
           <p className="user__username">{username}</p>
         </figcaption>
       </a>
 
-      <p className="user__description">{description}</p>
+      {description && <p className="user__description">{description}</p>}
 
       {company && (
         <p className="user__detail user__detail--first">
