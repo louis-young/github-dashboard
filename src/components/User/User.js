@@ -53,7 +53,7 @@ const User = () => {
       {website && (
         <p className="user__detail user__detail--last">
           <img className="user__icon" src={external} alt={website} />
-          <a href={link} target="_blank" rel="noopener nofollow noreferrer" className="user__text link">
+          <a href={website} target="_blank" rel="noopener nofollow noreferrer" className="user__text link">
             {website}
           </a>
         </p>
