@@ -7,7 +7,7 @@ import "./Loading.scss";
 const Loading = () => {
   return (
     <section className="loading">
-      <HashLoader color="#6d60d0" size={50} />
+      <HashLoader color="#003f5c" size={50} />
     </section>
   );
 };

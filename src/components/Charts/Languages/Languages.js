@@ -100,7 +100,7 @@ const Languages = () => {
             display: true,
           },
           responsive: true,
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
         }}
       />
     </article>

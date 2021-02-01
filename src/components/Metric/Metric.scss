@@ -31,22 +31,22 @@
   }
   &--repositories {
     #{$self}__wrapper {
-      background: transparentize($primary-shade, 0.25);
+      background: $primary-shade;
     }
   }
   &--followers {
     #{$self}__wrapper {
-      background: transparentize($secondary-shade, 0.25);
+      background: $secondary-shade;
     }
   }
   &--following {
     #{$self}__wrapper {
-      background: transparentize($tertiary-shade, 0.25);
+      background: $tertiary-shade;
     }
   }
   &--gists {
     #{$self}__wrapper {
-      background: transparentize($quaternary-shade, 0.25);
+      background: $quaternary-shade;
     }
   }
 }
