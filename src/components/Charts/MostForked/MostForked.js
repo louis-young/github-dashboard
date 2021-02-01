@@ -2,20 +2,15 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
-import { HorizontalBar } from "react-chartjs-2";
-
+import { getSelectionFromArray } from "../../../utilities/utilities";
 import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+
+import { HorizontalBar } from "react-chartjs-2";
 
 const sortRepositories = (repositories) => {
   const sortedRepositories = repositories.sort((a, b) => b.forks - a.forks);
 
   return sortedRepositories;
-};
-
-const getMostForkedRepositories = (repositories) => {
-  const mostForkedRepositories = repositories.slice(0, 5);
-
-  return mostForkedRepositories;
 };
 
 const formatRepositories = (repositories) => {
@@ -45,7 +40,7 @@ const MostForked = () => {
 
   const sortedRepositories = sortRepositories(repositories);
 
-  const mostForkedRepositories = getMostForkedRepositories(sortedRepositories);
+  const mostForkedRepositories = getSelectionFromArray(sortedRepositories, 5);
 
   const formattedRepositories = formatRepositories(mostForkedRepositories);
 

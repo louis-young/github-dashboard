@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
-import { Doughnut } from "react-chartjs-2";
-
 import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+import { getSelectionFromArray } from "../../../utilities/utilities";
+
+import { Doughnut } from "react-chartjs-2";
 
 const getStarsPerLanguage = (repositories) => {
   const starsPerLanguage = repositories.reduce((accumulator, repository) => {
@@ -26,12 +27,6 @@ const sortStarsPerLanguageDescending = (languages) => {
   const sortedStarsPerLanguageDescending = Object.entries(languages).sort(([, a], [, b]) => b - a);
 
   return sortedStarsPerLanguageDescending;
-};
-
-const getMostStarredLanguages = (languages) => {
-  const mostStarredLanguages = languages.slice(0, 5);
-
-  return mostStarredLanguages;
 };
 
 const formatStarsPerLanguage = (languages) => {
@@ -59,7 +54,7 @@ const StarsPerLanguage = () => {
 
   const sortedStarsPerLanguageDescending = sortStarsPerLanguageDescending(starsPerLanguage);
 
-  const mostStarredLanguages = getMostStarredLanguages(sortedStarsPerLanguageDescending);
+  const mostStarredLanguages = getSelectionFromArray(sortedStarsPerLanguageDescending, 5);
 
   const formattedStarsPerLanguage = formatStarsPerLanguage(mostStarredLanguages);
 

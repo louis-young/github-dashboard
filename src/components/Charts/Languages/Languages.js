@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
-import { Pie } from "react-chartjs-2";
-
+import { getSelectionFromArray } from "../../../utilities/utilities";
 import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+
+import { Pie } from "react-chartjs-2";
 
 const getLanguagesFromRepositories = (repositories) => {
   const languages = repositories.reduce((accumulator, repository) => {
@@ -26,12 +27,6 @@ const sortLanguagesDescending = (languages) => {
   const sortedLanguagesDescending = Object.entries(languages).sort(([, a], [, b]) => b - a);
 
   return sortedLanguagesDescending;
-};
-
-const getMostPopularLanguages = (languages) => {
-  const mostPopularLanguages = languages.slice(0, 5);
-
-  return mostPopularLanguages;
 };
 
 const formatLanguages = (languages) => {
@@ -59,7 +54,7 @@ const Languages = () => {
 
   const sortedLanguagesDescending = sortLanguagesDescending(languages);
 
-  const mostPopularLanguages = getMostPopularLanguages(sortedLanguagesDescending);
+  const mostPopularLanguages = getSelectionFromArray(sortedLanguagesDescending, 5);
 
   const formattedLanguages = formatLanguages(mostPopularLanguages);
 

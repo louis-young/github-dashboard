@@ -2,21 +2,13 @@ import React, { useContext } from "react";
 
 import { Context } from "../../context/Context";
 
+import { linkHasPrefix } from "../../utilities/utilities";
+
 import office from "../../assets/icons/user/office.svg";
 import pin from "../../assets/icons/user/pin.svg";
 import external from "../../assets/icons/user/external.svg";
 
 import "./User.scss";
-
-const linkHasPrefix = (link) => {
-  const http = link.startsWith("http://");
-
-  const https = link.startsWith("https://");
-
-  const prefixed = http || https;
-
-  return prefixed;
-};
 
 const User = () => {
   const { user } = useContext(Context);

@@ -2,20 +2,15 @@ import React, { useContext } from "react";
 
 import { Context } from "../../../context/Context";
 
-import { Bar } from "react-chartjs-2";
-
 import { CHART_COLOUR_PALETTE } from "../../../constants/constants";
+import { getSelectionFromArray } from "../../../utilities/utilities";
+
+import { Bar } from "react-chartjs-2";
 
 const sortRepositories = (repositories) => {
   const sortedRepositories = repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
   return sortedRepositories;
-};
-
-const getMostStarredRepositories = (repositories) => {
-  const mostStarredRepositories = repositories.slice(0, 5);
-
-  return mostStarredRepositories;
 };
 
 const formatRepositories = (repositories) => {
@@ -45,7 +40,7 @@ const MostStarred = () => {
 
   const sortedRepositories = sortRepositories(repositories);
 
-  const mostStarredRepositories = getMostStarredRepositories(sortedRepositories);
+  const mostStarredRepositories = getSelectionFromArray(sortedRepositories, 5);
 
   const formattedRepositories = formatRepositories(mostStarredRepositories);
 
