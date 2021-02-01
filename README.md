@@ -2,7 +2,7 @@
 
 React application to look up and display metrics and information about a GitHub user using charts and graphs by making requests to the GitHub API.
 
-<!-- ![GitHub Dashboard](documentation/github-dashboard.jpg) -->
+![GitHub Dashboard](documentation/github-dashboard.jpg)
 
 ## Description
 
