@@ -1,16 +1,16 @@
 # GitHub Dashboard
 
-A React application to look up and display metrics and information about a GitHub user using charts and graphs by making requests to the GitHub API.
+A dashboard application to look up and display metrics and information about a GitHub user.
 
 ![GitHub Dashboard](documentation/github-dashboard.jpg)
 
 ## Description
 
-This is an application which allows you to look up a GitHub user and display metrics and information about the user. Data is consumed and manipulated in to formats for use in graphs and data visualisation tools.
+A dashboard application to visualise a GitHub user's latest activity with a clean interface with different information displayed in text, lists and different types of charts.
 
 ## Motivation
 
-I built this application to practice real world data fetching from multiple endpoints in parallel, and to learn about manipulating and formatting data.
+This was a learning project to strengthen my understanding of making multiple network requests in parallel and then formatting and manipulating data.
 
 ### Available Scripts
 
