@@ -1,3 +1,5 @@
+⚠️ Please note that this is an old project and does not reflect the quality of my current work.
+
 # GitHub Dashboard
 
 A dashboard application to look up and display metrics and information about a GitHub user.
