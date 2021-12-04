@@ -16,6 +16,7 @@ This was a learning project to strengthen my understanding of making multiple ne
 
 - JavaScript.
 - React.
+- Sass (BEM).
 - Chart.js
 - GitHub API.
 
