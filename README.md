@@ -8,6 +8,8 @@ A dashboard application to look up and display metrics and information about a G
 
 A dashboard application to visualise a GitHub user's latest activity with a clean interface with different information displayed in text, lists and different types of charts.
 
+Built with React, Chart,js and the GitHub API.
+
 ## Motivation
 
 This was a learning project to strengthen my understanding of making multiple network requests in parallel and then formatting and manipulating data.
